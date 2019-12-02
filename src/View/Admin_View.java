@@ -46,9 +46,17 @@ public class Admin_View extends javax.swing.JFrame {
         MhsRead = new javax.swing.JButton();
         MhsDelete = new javax.swing.JButton();
         MhsUpdate = new javax.swing.JButton();
+        BtnBACK = new javax.swing.JButton();
         MoveMHS = new javax.swing.JPanel();
+        Blank = new javax.swing.JPanel();
         LCreate = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        cNIM = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        cNAMA = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        cNOHP = new javax.swing.JTextField();
+        cBCreate = new javax.swing.JButton();
         LRead = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -135,6 +143,13 @@ public class Admin_View extends javax.swing.JFrame {
 
         MhsUpdate.setText("UPDATE");
 
+        BtnBACK.setText("BACK");
+        BtnBACK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnBACKActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout MenuMHSLayout = new javax.swing.GroupLayout(MenuMHS);
         MenuMHS.setLayout(MenuMHSLayout);
         MenuMHSLayout.setHorizontalGroup(
@@ -145,46 +160,108 @@ public class Admin_View extends javax.swing.JFrame {
                     .addComponent(MhsUpdate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(MhsCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(MhsRead, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuMHSLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(MhsDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(MenuMHSLayout.createSequentialGroup()
+                        .addComponent(MhsDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(BtnBACK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         MenuMHSLayout.setVerticalGroup(
             MenuMHSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuMHSLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(MhsCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MhsCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(MhsRead, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MhsRead, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(MhsDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MhsDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(MhsUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(MhsUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BtnBACK)
+                .addContainerGap())
         );
 
         MoveMHS.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.MatteBorder(null), "RESULT"));
         MoveMHS.setToolTipText("");
         MoveMHS.setLayout(new java.awt.CardLayout());
 
-        jLabel2.setText("KONTOL");
+        javax.swing.GroupLayout BlankLayout = new javax.swing.GroupLayout(Blank);
+        Blank.setLayout(BlankLayout);
+        BlankLayout.setHorizontalGroup(
+            BlankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 392, Short.MAX_VALUE)
+        );
+        BlankLayout.setVerticalGroup(
+            BlankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 302, Short.MAX_VALUE)
+        );
+
+        MoveMHS.add(Blank, "card4");
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setText("NIM");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setText("Nama");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setText("Nomor HP");
+
+        cNOHP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cNOHPActionPerformed(evt);
+            }
+        });
+
+        cBCreate.setText("CREATE");
 
         javax.swing.GroupLayout LCreateLayout = new javax.swing.GroupLayout(LCreate);
         LCreate.setLayout(LCreateLayout);
         LCreateLayout.setHorizontalGroup(
             LCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LCreateLayout.createSequentialGroup()
-                .addGap(159, 159, 159)
-                .addComponent(jLabel2)
-                .addContainerGap(193, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(LCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(LCreateLayout.createSequentialGroup()
+                        .addGroup(LCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(46, 46, 46)
+                        .addGroup(LCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cNAMA)
+                            .addComponent(cNIM)))
+                    .addGroup(LCreateLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(cNOHP)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LCreateLayout.createSequentialGroup()
+                .addContainerGap(108, Short.MAX_VALUE)
+                .addComponent(cBCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(98, 98, 98))
         );
         LCreateLayout.setVerticalGroup(
             LCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LCreateLayout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addComponent(jLabel2)
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addGroup(LCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(LCreateLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(cNIM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LCreateLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel4)))
+                .addGap(18, 18, 18)
+                .addGroup(LCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2)
+                    .addComponent(cNAMA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(LCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(cNOHP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addComponent(cBCreate)
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         MoveMHS.add(LCreate, "card2");
@@ -255,6 +332,16 @@ public class Admin_View extends javax.swing.JFrame {
         MoveMHS.revalidate();
     }//GEN-LAST:event_MhsReadActionPerformed
 
+    private void BtnBACKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBACKActionPerformed
+        Mahasiswa.setVisible(false);
+        Menu.setVisible(true);
+        MoveMHS.removeAll();
+    }//GEN-LAST:event_BtnBACKActionPerformed
+
+    private void cNOHPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cNOHPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cNOHPActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -307,6 +394,10 @@ public class Admin_View extends javax.swing.JFrame {
     public JButton getBtnMahasiswa() {
         return btnMahasiswa;
     }
+    
+    public JButton getBtnBack() {
+        return BtnBACK;
+    }
 
     public JButton getBtnMCreate() {
         return MhsCreate;
@@ -323,6 +414,8 @@ public class Admin_View extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Blank;
+    private javax.swing.JButton BtnBACK;
     private javax.swing.JPanel LCreate;
     private javax.swing.JPanel LRead;
     private javax.swing.JPanel Mahasiswa;
@@ -335,10 +428,16 @@ public class Admin_View extends javax.swing.JFrame {
     private javax.swing.JPanel MoveMHS;
     private javax.swing.JButton bLogout;
     private javax.swing.JButton btnMahasiswa;
+    private javax.swing.JButton cBCreate;
+    private javax.swing.JTextField cNAMA;
+    private javax.swing.JTextField cNIM;
+    private javax.swing.JTextField cNOHP;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel namaDia;
     // End of variables declaration//GEN-END:variables
 }

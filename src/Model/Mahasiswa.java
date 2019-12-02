@@ -14,8 +14,8 @@ import java.util.ArrayList;
 public class Mahasiswa extends Orang {
     private TugasAkhir tugasAkhir;
 
-    public Mahasiswa(String nama, String keyID) {
-        super(nama, keyID);
+    public Mahasiswa(String nama, String keyID, String NoHP, String Username, String Password) {
+        super(nama, keyID, NoHP, Username, Password);
     }
 
     public void createTA(String topik, String judul){

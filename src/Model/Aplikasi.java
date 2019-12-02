@@ -45,8 +45,8 @@ public class Aplikasi {
     }
 
     // Method memasukan Mahasiswa
-    public void inputMahasiswa(String nama, String NIM) {
-        Mahasiswa seseorang = new Mahasiswa(nama, NIM);
+    public void inputMahasiswa(String nama, String NIM, String NoHP, String Username, String Password) {
+        Mahasiswa seseorang = new Mahasiswa(nama, NIM, Username, NoHP, Password);
         daftarMahasiswa.add(seseorang);
     }
 
