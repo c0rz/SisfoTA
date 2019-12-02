@@ -31,6 +31,14 @@ public class HandlerGUI implements ActionListener {
         if (act.equals(app.getBtnLogin())) {
             login();
         }
+        if (act.equals(admin.getBtnLogout())) {
+            app.resetLogin();
+            int a = JOptionPane.showConfirmDialog(app, "Confirm Logout ?", "Logout", 0);
+            if (a == 0) {
+                app.setVisible(true);
+                admin.setVisible(false);
+            }
+        }
     }
 
     public void login() {
