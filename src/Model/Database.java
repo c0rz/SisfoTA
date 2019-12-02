@@ -36,4 +36,19 @@ public class Database {
         }        
         return pass;
     }        
+    
+    public String getLevel(String username) {
+        String data = null;
+        try {            
+            String query = "select level from account where username='"
+            + username + "';";
+            ResultSet rs = stm.executeQuery(query);
+            if (rs.next()) {
+                data =  rs.getString("level");
+            } 
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Terjadi kesalahan saat mendapatkan Level!");            
+        }        
+        return data;
+    }
 }

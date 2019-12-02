@@ -17,7 +17,7 @@ public class HandlerGUI implements ActionListener {
         app = new Login();
         app.AddActionListener(this);
         app.setVisible(true);
-        
+
         db.connect();
     }
 
@@ -27,19 +27,26 @@ public class HandlerGUI implements ActionListener {
         if (act.equals(app.getBtnLogin())) {
             login();
         } else {
-            
+
         }
     }
-    
-    public void login() {        
-         if (app.getPasswor().equals(db.getPassword(app.getUsername()))){
-             JOptionPane.showMessageDialog(app, "Login Berhasil!");
-         } else {       
-                if(db.getPassword(app.getUsername())==null){
-                    JOptionPane.showMessageDialog(null, "Username belum terdaftar!");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Password salah!");
-                }   
-         }
+
+    public void login() {
+        if (app.getPasswor().equals(db.getPassword(app.getUsername()))) {
+            JOptionPane.showMessageDialog(app, "Login Berhasil!");
+            if (db.getLevel(app.getUsername()).equals("Admin")) {
+                JOptionPane.showMessageDialog(null, "Cie Admin");
+            } else {
+                JOptionPane.showMessageDialog(null, "Cie GOBLOK");
+            }
+        } else {
+            if (db.getPassword(app.getUsername()) == null) {
+                app.resetLogin();
+                JOptionPane.showMessageDialog(null, "Username belum terdaftar!");
+            } else {
+                app.resetLogin();
+                JOptionPane.showMessageDialog(null, "Password salah!");
+            }
+        }
     }
 }

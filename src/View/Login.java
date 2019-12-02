@@ -183,6 +183,11 @@ public class Login extends javax.swing.JFrame {
         btnLOGIN.addActionListener(a);  
     }
     
+    public void resetLogin() {
+        username.setText("");
+        passwor.setText("");
+    }
+    
     public JButton getBtnLogin() {
         return btnLOGIN;
     }
