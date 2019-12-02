@@ -5,6 +5,8 @@
  */
 package View;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
@@ -19,6 +21,8 @@ public class Admin_View extends javax.swing.JFrame {
      */
     public Admin_View() {
         initComponents();
+        Image icon = Toolkit.getDefaultToolkit().getImage("src/Gambar/ico.png");
+        setIconImage(icon);
     }
 
     /**
@@ -30,18 +34,38 @@ public class Admin_View extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        Menu = new javax.swing.JPanel();
         btnMahasiswa = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         namaDia = new javax.swing.JLabel();
         bLogout = new javax.swing.JButton();
+        Mahasiswa = new javax.swing.JPanel();
+        MenuMHS = new javax.swing.JPanel();
+        MhsCreate = new javax.swing.JButton();
+        MhsRead = new javax.swing.JButton();
+        MhsDelete = new javax.swing.JButton();
+        MhsUpdate = new javax.swing.JButton();
+        MoveMHS = new javax.swing.JPanel();
+        LCreate = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        LRead = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Admin - SisfoTA");
+        setResizable(false);
         getContentPane().setLayout(new java.awt.CardLayout());
 
+        btnMahasiswa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnMahasiswa.setText("Mahasiswa");
+        btnMahasiswa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMahasiswaActionPerformed(evt);
+            }
+        });
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Dosen");
 
         jLabel1.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
@@ -51,49 +75,185 @@ public class Admin_View extends javax.swing.JFrame {
 
         bLogout.setText("LOGOUT");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout MenuLayout = new javax.swing.GroupLayout(Menu);
+        Menu.setLayout(MenuLayout);
+        MenuLayout.setHorizontalGroup(
+            MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MenuLayout.createSequentialGroup()
                 .addGap(62, 62, 62)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MenuLayout.createSequentialGroup()
                         .addComponent(namaDia)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuLayout.createSequentialGroup()
+                        .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(MenuLayout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(bLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(MenuLayout.createSequentialGroup()
                                 .addComponent(btnMahasiswa, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(77, 77, 77))))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        MenuLayout.setVerticalGroup(
+            MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuLayout.createSequentialGroup()
                 .addGap(53, 53, 53)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(bLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(namaDia)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnMahasiswa, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(120, 120, 120))
         );
 
-        getContentPane().add(jPanel1, "card2");
+        getContentPane().add(Menu, "card2");
+
+        MenuMHS.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.MatteBorder(null), "Menu Mahasiswa"));
+
+        MhsCreate.setText("CREATE");
+        MhsCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MhsCreateActionPerformed(evt);
+            }
+        });
+
+        MhsRead.setText("READ");
+        MhsRead.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MhsReadActionPerformed(evt);
+            }
+        });
+
+        MhsDelete.setText("DELETE");
+
+        MhsUpdate.setText("UPDATE");
+
+        javax.swing.GroupLayout MenuMHSLayout = new javax.swing.GroupLayout(MenuMHS);
+        MenuMHS.setLayout(MenuMHSLayout);
+        MenuMHSLayout.setHorizontalGroup(
+            MenuMHSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MenuMHSLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(MenuMHSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(MhsUpdate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(MhsCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(MhsRead, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuMHSLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(MhsDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        MenuMHSLayout.setVerticalGroup(
+            MenuMHSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MenuMHSLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(MhsCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(MhsRead, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(MhsDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(MhsUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        MoveMHS.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.MatteBorder(null), "RESULT"));
+        MoveMHS.setToolTipText("");
+        MoveMHS.setLayout(new java.awt.CardLayout());
+
+        jLabel2.setText("KONTOL");
+
+        javax.swing.GroupLayout LCreateLayout = new javax.swing.GroupLayout(LCreate);
+        LCreate.setLayout(LCreateLayout);
+        LCreateLayout.setHorizontalGroup(
+            LCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LCreateLayout.createSequentialGroup()
+                .addGap(159, 159, 159)
+                .addComponent(jLabel2)
+                .addContainerGap(193, Short.MAX_VALUE))
+        );
+        LCreateLayout.setVerticalGroup(
+            LCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LCreateLayout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addComponent(jLabel2)
+                .addContainerGap(204, Short.MAX_VALUE))
+        );
+
+        MoveMHS.add(LCreate, "card2");
+
+        jLabel3.setText("MEMEK");
+
+        javax.swing.GroupLayout LReadLayout = new javax.swing.GroupLayout(LRead);
+        LRead.setLayout(LReadLayout);
+        LReadLayout.setHorizontalGroup(
+            LReadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LReadLayout.createSequentialGroup()
+                .addGap(174, 174, 174)
+                .addComponent(jLabel3)
+                .addContainerGap(184, Short.MAX_VALUE))
+        );
+        LReadLayout.setVerticalGroup(
+            LReadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LReadLayout.createSequentialGroup()
+                .addGap(113, 113, 113)
+                .addComponent(jLabel3)
+                .addContainerGap(175, Short.MAX_VALUE))
+        );
+
+        MoveMHS.add(LRead, "card3");
+
+        javax.swing.GroupLayout MahasiswaLayout = new javax.swing.GroupLayout(Mahasiswa);
+        Mahasiswa.setLayout(MahasiswaLayout);
+        MahasiswaLayout.setHorizontalGroup(
+            MahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MahasiswaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(MenuMHS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(MoveMHS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        MahasiswaLayout.setVerticalGroup(
+            MahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MahasiswaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(MahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(MoveMHS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(MenuMHS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        getContentPane().add(Mahasiswa, "card3");
 
         setSize(new java.awt.Dimension(625, 384));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnMahasiswaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMahasiswaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMahasiswaActionPerformed
+
+    private void MhsCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MhsCreateActionPerformed
+        MoveMHS.removeAll();
+        MoveMHS.add(LCreate);
+        MoveMHS.repaint();
+        MoveMHS.revalidate();
+    }//GEN-LAST:event_MhsCreateActionPerformed
+
+    private void MhsReadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MhsReadActionPerformed
+        MoveMHS.removeAll();
+        MoveMHS.add(LRead);
+        MoveMHS.repaint();
+        MoveMHS.revalidate();
+    }//GEN-LAST:event_MhsReadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,25 +290,55 @@ public class Admin_View extends javax.swing.JFrame {
             }
         });
     }
-    
+
     public void setHeader(String text) {
         namaDia.setText(text);
     }
-    
+
     public JButton getBtnLogout() {
         return bLogout;
     }
-    
+
     public void AddActionListener(ActionListener a) {
         bLogout.addActionListener(a);
+        btnMahasiswa.addActionListener(a);
+    }
+
+    public JButton getBtnMahasiswa() {
+        return btnMahasiswa;
+    }
+
+    public JButton getBtnMCreate() {
+        return MhsCreate;
+    }
+
+    public void TampilanMCreate() {
+        Mahasiswa.setVisible(true);
+        Menu.setVisible(false);
+    }
+
+    public void TampilanMahasiswa() {
+        Mahasiswa.setVisible(true);
+        Menu.setVisible(false);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel LCreate;
+    private javax.swing.JPanel LRead;
+    private javax.swing.JPanel Mahasiswa;
+    private javax.swing.JPanel Menu;
+    private javax.swing.JPanel MenuMHS;
+    private javax.swing.JButton MhsCreate;
+    private javax.swing.JButton MhsDelete;
+    private javax.swing.JButton MhsRead;
+    private javax.swing.JButton MhsUpdate;
+    private javax.swing.JPanel MoveMHS;
     private javax.swing.JButton bLogout;
     private javax.swing.JButton btnMahasiswa;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel namaDia;
     // End of variables declaration//GEN-END:variables
 }

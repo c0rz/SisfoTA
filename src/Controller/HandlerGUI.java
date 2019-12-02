@@ -39,6 +39,12 @@ public class HandlerGUI implements ActionListener {
                 admin.setVisible(false);
             }
         }
+        if (act.equals(admin.getBtnMahasiswa())) {
+            admin.TampilanMahasiswa();
+        }
+        if (act.equals(admin.getBtnMCreate())) {
+            admin.TampilanMahasiswa();
+        }
     }
 
     public void login() {
