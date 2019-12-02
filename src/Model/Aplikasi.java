@@ -51,8 +51,8 @@ public class Aplikasi {
     }
 
     // Method memasukan Mahasiswa
-    public void inputDosen(String nama, String idDos, String nohp) {
-        Dosen seseorang = new Dosen(nama, idDos, nohp);
+    public void inputDosen(String nama, String keyID, String NoHP, String Username, String Password) {
+        Dosen seseorang = new Dosen(nama, keyID, NoHP, Username, Password);
         daftarDosen.add(seseorang);
     }
 
@@ -81,7 +81,7 @@ public class Aplikasi {
         } else {
             System.out.println("ID TENTOR\t: " + orang.getKeyID());
             System.out.println("Nama\t\t: " + orang.NamaDosen());
-            System.out.println("Nomor Telphone\t\t: " + orang.getNotelp());
+            System.out.println("Nomor Telphone\t\t: " + orang.getNoHP());
             if (orang.getKelasTA() != null) {
                 System.out.println("Topik TA\t\t: " + orang.getKelasTA().getTopik());
             }

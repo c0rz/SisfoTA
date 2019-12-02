@@ -385,10 +385,15 @@ public class Admin_View extends javax.swing.JFrame {
     public JButton getBtnLogout() {
         return bLogout;
     }
+    
+    public JButton getCreateMhs() {
+        return cBCreate;
+    }
 
     public void AddActionListener(ActionListener a) {
         bLogout.addActionListener(a);
         btnMahasiswa.addActionListener(a);
+        cBCreate.addActionListener(a);
     }
 
     public JButton getBtnMahasiswa() {

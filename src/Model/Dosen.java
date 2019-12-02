@@ -14,11 +14,9 @@ import java.util.List;
  */
 public class Dosen extends Orang {
     private KelasTugasAkhir KelasTA;
-    private String notelp;
 
-    public Dosen(String namaDosen, String idDosen, String no_hp) {
-        super(namaDosen, idDosen);
-        this.notelp = no_hp;
+    public Dosen(String nama, String keyID, String NoHP, String Username, String Password) {
+        super(nama, keyID, NoHP, Username, Password);
     }
     
     public void createKelompokTA(String bahas_topik) {
@@ -32,14 +30,6 @@ public class Dosen extends Orang {
 
     public void setKelasTA(KelasTugasAkhir KelasTA) {
         this.KelasTA = KelasTA;
-    }
-
-    public String getNotelp() {
-        return notelp;
-    }
-
-    public void setNotelp(String notelp) {
-        this.notelp = notelp;
     }
 
     public String getIdDosen() {

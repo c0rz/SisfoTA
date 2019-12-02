@@ -42,6 +42,9 @@ public class HandlerGUI implements ActionListener {
         if (act.equals(admin.getBtnMahasiswa())) {
             admin.TampilanMahasiswa();
         }
+        if (act.equals(admin.getCreateMhs())) {
+            insertMhs();
+        }
     }
 
     public void login() {
@@ -64,5 +67,9 @@ public class HandlerGUI implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Password salah!");
             }
         }
+    }
+    
+    public void insertMhs() {
+        JOptionPane.showMessageDialog(null, "Berhasil membuat Mahasiswa!");
     }
 }

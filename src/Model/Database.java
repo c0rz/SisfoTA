@@ -59,7 +59,7 @@ public class Database {
                     + username + "';";
             ResultSet rs = stm.executeQuery(query);
             if (rs.next()) {
-                n = new Admin(rs.getString("username"), rs.getString("password"), rs.getString("nama"), rs.getString("ID_Akun"));
+                n = new Admin(rs.getString("nama"), rs.getString("ID_Akun"), rs.getString("NomorHP"), rs.getString("Username"), rs.getString("Password"));
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error");
@@ -72,11 +72,12 @@ public class Database {
             String query = "insert into account(ID_Akun,Nama,NomorHP,Username,Password,level,Topik,Judul,SetPembimbing) values ("
                     + "'" + m.getNIM() + "',"
                     + "'" + m.getNama() + "',"
-                    + "'" + t.getRektujuan() + "',"
-                    + t.getJmltransfer() + "');";
+                    + "'" + m.getNoHP() + "',"
+                    + "'" + m.getUsername() + "',"
+                    + "'" + m.getPassword() + "','Mahasiswa','-','-','-')";
             stm.execute(query);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error Transfer");
+            JOptionPane.showMessageDialog(null, "Error Create Mhs");
         }
     }
 }
