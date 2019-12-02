@@ -9,17 +9,18 @@ import javax.swing.JOptionPane;
 
 public class HandlerGUI implements ActionListener {
 
-    private final Login app;
-    private final Admin admin;
+    private final Login_View app;
+    private final Admin_View admin;
+    private Admin siAdmin;
     Database db = new Database();
     ActionEvent ae;
 
     public HandlerGUI() {
-        app = new Login();
+        app = new Login_View();
         app.AddActionListener(this);
         app.setVisible(true);
-        admin = new Admin();
-        admin.addActionListener(this);
+        admin = new Admin_View();
+        admin.AddActionListener(this);
         admin.setVisible(false);
         db.connect();
     }
@@ -35,8 +36,10 @@ public class HandlerGUI implements ActionListener {
     public void login() {
         if (app.getPasswor().equals(db.getPassword(app.getUsername()))) {
             JOptionPane.showMessageDialog(app, "Login Berhasil!");
+            siAdmin = db.loadAdmin(app.getUsername());
             if (db.getLevel(app.getUsername()).equals("Admin")) {
                 admin.setVisible(true);
+                admin.setHeader(siAdmin.getNama());
                 app.setVisible(false);
             } else {
                 JOptionPane.showMessageDialog(null, "Cie GOBLOK");

@@ -12,6 +12,15 @@ package Model;
 public abstract class Orang {
     private String nama;
     private String keyID;
+    private String NoHP;
+
+    public String getNoHP() {
+        return NoHP;
+    }
+
+    public void setNoHP(String NoHP) {
+        this.NoHP = NoHP;
+    }
 
     public Orang(String nama, String keyID) {
         this.nama = nama;

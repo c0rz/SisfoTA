@@ -51,4 +51,19 @@ public class Database {
         }        
         return data;
     }
+    
+    public Admin loadAdmin(String username) {
+        Admin n = null;
+        try {
+            String query = "select * from account where username='"
+                    + username + "';";
+            ResultSet rs = stm.executeQuery(query);
+            if (rs.next()){
+                n = new Admin(rs.getString("username"),rs.getString("password"),rs.getString("nama"),rs.getString("ID_Akun"));
+            }            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error");
+        }
+        return n;
+    }
 }
